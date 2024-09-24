@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">BiometricAuth</string>
+    <string name="login_desc">Welcome, kindly log in to enter the app.</string>
+    <string name="login">Login</string>
+</resources>
