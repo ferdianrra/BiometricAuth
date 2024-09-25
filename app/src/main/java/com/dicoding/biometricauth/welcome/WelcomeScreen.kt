@@ -122,22 +122,22 @@ fun WelcomeScreen (
             Text(
                 text = when(result) {
                     is BiometricResult.AuthenticationError -> {
-                        "An error occurred: ${result.error}. Please try again."
+                        stringResource(id = R.string.biometric_error, result.error)
                     }
                     BiometricResult.AuthenticationFailed -> {
-                        "Unfortunately, authentication failed"
+                        stringResource(id = R.string.authentication_failed)
                     }
                     BiometricResult.AuthenticationNotSet -> {
-                        "It looks like biometric authentication isn’t set up yet. Let’s get that sorted!"
+                        stringResource(id = R.string.authentication_not_set)
                     }
                     BiometricResult.AuthenticationSuccess -> {
-                        "Authentication successful"
+                        stringResource(id = R.string.authentication_success)
                     }
                     BiometricResult.FeatureUnavailable -> {
-                        "Biometric feature is unavailable on this device. Please check your settings."
+                        stringResource(id = R.string.feature_unavailable)
                     }
                     BiometricResult.HardwareUnavailable -> {
-                        "This device doesn't support biometric features. Make sure your device is compatible."
+                       stringResource(id = R.string.hardware_unavailable)
                     }
                 },
                 color = colorResource(id = R.color.white)

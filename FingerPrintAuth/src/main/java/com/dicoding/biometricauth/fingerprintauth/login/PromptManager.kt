@@ -1,6 +1,7 @@
 package com.dicoding.biometricauth.fingerprintauth.login
 
 import android.hardware.biometrics.BiometricManager.Authenticators.BIOMETRIC_STRONG
+import android.hardware.biometrics.BiometricManager.Authenticators.BIOMETRIC_WEAK
 import android.hardware.biometrics.BiometricManager.Authenticators.DEVICE_CREDENTIAL
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
@@ -22,15 +23,17 @@ class PromptManager(
     ) {
         val manager = BiometricManager.from(activity)
         val authenticator = if (Build.VERSION.SDK_INT >= 30) {
-            BIOMETRIC_STRONG  or DEVICE_CREDENTIAL
+            BIOMETRIC_WEAK  or DEVICE_CREDENTIAL
         } else {
-            BIOMETRIC_STRONG
+            BIOMETRIC_WEAK
         }
 
         val promptInfo = PromptInfo.Builder()
             .setTitle(title)
             .setDescription(description)
             .setAllowedAuthenticators(authenticator)
+
+
 
         if (Build.VERSION.SDK_INT < 30) {
             promptInfo.setNegativeButtonText("Cancel")

@@ -2,4 +2,10 @@
     <string name="app_name">BiometricAuth</string>
     <string name="login_desc">Welcome, kindly log in to enter the app.</string>
     <string name="login">Login</string>
+    <string name="biometric_error"> An error occurred: %s. Please try again</string>
+    <string name="authentication_failed">Unfortunately, authentication failed</string>
+    <string name="authentication_not_set">It looks like biometric authentication isn’t set up yet.  Let’s get that sorted!</string>
+    <string name="authentication_success">Authentication successful</string>
+    <string name="feature_unavailable">Biometric feature is unavailable on this device. Please check your settings.</string>
+    <string name="hardware_unavailable"> This device doesn\'t support biometric features. Make sure your device is compatible.</string>
 </resources>
